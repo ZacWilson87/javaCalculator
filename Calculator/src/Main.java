@@ -8,14 +8,14 @@ public class Main {
         System.out.println("-------------------------------");
         System.out.println("----Please Choose an option----");
         System.out.println("Enter: ");
-        String userChoices = UserChoiceQuery.greeting();
+        String userChoice = UserChoiceQuery.greeting();
         int num1 = 0;
         int num2 = 0;
         int answer = 0;
 
         do {
 
-            if (userChoices.equals("add")) {
+            if (userChoice.equals("add")) {
                 System.out.println("1st Number to add: ");
                 Scanner addition = new Scanner(System.in);
                 num1 = addition.nextInt();
@@ -23,8 +23,9 @@ public class Main {
                 num2 = addition.nextInt();
                 answer = Operations.addition(num1,num2);
                 System.out.println(num1 + " + " + num2 + " = " + answer);
-                UserChoiceQuery.greeting();
-            } else if (userChoices.equals("sub")) {
+                break;
+
+            } else if (userChoice.equals("sub")) {
                 System.out.println("1st Number to subtract: ");
                 Scanner subtract = new Scanner(System.in);
                 num1 = subtract.nextInt();
@@ -32,9 +33,8 @@ public class Main {
                 num2 = subtract.nextInt();
                 answer = Operations.subtraction(num1,num2);
                 System.out.println(num1 + " - " + num2 + " = " + answer);
-                UserChoiceQuery.greeting();
-
-            } else if (userChoices.equals("mul")) {
+                break;
+            } else if (userChoice.equals("mul")) {
                 System.out.println("1st Number to multiply: ");
                 Scanner multiply = new Scanner(System.in);
                 num1 = multiply.nextInt();
@@ -42,9 +42,9 @@ public class Main {
                 num2 = multiply.nextInt();
                 answer = Operations.multiplication(num1,num2);
                 System.out.println(num1 + " * " + num2 + " = " + answer);
-                UserChoiceQuery.greeting();
+                break;
 
-            } else if (userChoices.equals("div")) {
+            } else if (userChoice.equals("div")) {
                 System.out.println("1st Number to divide: ");
                 Scanner divide = new Scanner(System.in);
                 num1 = divide.nextInt();
@@ -52,15 +52,17 @@ public class Main {
                 num2 = divide.nextInt();
                 answer = Operations.division(num1,num2);
                 System.out.println(num1 + " / " + num2 + " = " + answer);
-                UserChoiceQuery.greeting();
+                break;
 
 
             }else {
                 UserChoiceQuery.greeting();
+
             }
 
 
-        }while (!(userChoices.equals("add")) || !(userChoices.equals("sub")) || !(userChoices.equals("mul")) || !(userChoices.equals("div")));
-
+        }while ((userChoice.equals("add")) || (userChoice.equals("sub")) || (userChoice.equals("mul")) || (userChoice.equals("div")));
+        UserChoiceQuery.greeting();
     }
+
 }

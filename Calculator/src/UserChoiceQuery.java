@@ -9,9 +9,9 @@ public class UserChoiceQuery {
             System.out.println("       'mul' for multiplication");
             System.out.println("       'div' for division");
             Scanner operatorChoices = new Scanner(System.in);
-            String userChoice = operatorChoices.nextLine();
-            return userChoice;
-    };
+            return operatorChoices.nextLine();
+
+    }
 
 
 }
